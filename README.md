@@ -1,4 +1,10 @@
 # djangorestframeworkApi
 restAPI with django and restframework
-data represents operators, weapons, gadgets, skins and others from Rainbow Six Siege.
-The purpose is to explore and learn in django and its dependencies.
+Data represents domains from Rainbow Six Siege, such as : 
+- operators
+- weapons
+- gadgets
+- skins 
+- others
+
+The sole purpose is to explore and learn Django and its dependencies on the back-end.
