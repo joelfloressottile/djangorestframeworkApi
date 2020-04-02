@@ -1,5 +1,5 @@
 # djangorestframeworkApi
-This is a restAPI with django and restframework.
+This is a restAPI with django and restframework.  
 Data represents domains from Rainbow Six Siege, such as : 
 - operators
 - weapons
