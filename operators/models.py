@@ -1,5 +1,6 @@
 from django.db import models
 from django_countries.fields import CountryField
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 
@@ -15,6 +16,7 @@ class Operator(models.Model):
                             choices=SIDES,
                             default='',
                             )
+    story = RichTextField(blank=True, null=True)
 
     def __str__(self):
         return self.name

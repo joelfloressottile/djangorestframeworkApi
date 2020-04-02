@@ -5,7 +5,7 @@ from .models import Operator, Weapon, Gadget, Skin
 
 
 class OperatorAdmin(admin.ModelAdmin):
-    list_display = ('name', 'side', 'country',)
+    list_display = ('name', 'side', 'country', 'story')
 
 
 class SkinAdmin(admin.ModelAdmin):

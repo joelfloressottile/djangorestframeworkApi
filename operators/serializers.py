@@ -27,7 +27,7 @@ class OperatorSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Operator
-        fields = ['id', 'name', 'side', 'country', 'skins', 'weapons', 'gadget']
+        fields = ['id', 'name', 'side', 'country', 'story', 'skins', 'weapons', 'gadget']
 
 
 class OperatorWeapon(serializers.ModelSerializer):
