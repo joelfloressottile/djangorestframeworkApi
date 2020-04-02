@@ -9,8 +9,19 @@ from rest_framework.response import Response
 
 
 class OperatorViewSet(viewsets.ModelViewSet):
-    queryset = Operator.objects.all()
     serializer_class = OperatorSerializer
+
+    def get_queryset(self):
+        queryset = Operator.objects.all()
+        weapon_id = self.request.query_params.get('weapon_id', None)
+        side = self.request.query_params.get('side', None)
+        if weapon_id is not None:
+            print(' --- IS NOT NONE --- ')
+            queryset = queryset.filter(weapons__id=weapon_id)
+        if side is not None:
+            print(' --- IS NOT NONE --- ')
+            queryset = queryset.filter(side=side)
+        return queryset
 
 
 class WeaponViewSet(viewsets.ModelViewSet):
