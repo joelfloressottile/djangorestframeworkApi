@@ -13,6 +13,7 @@ router.register(r'skins', SkinViewSet)
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', include('admin_honeypot.urls', namespace="admin_honeypot")),
+    path('secret-access/', admin.site.urls),
     path('api/', include(router.urls)),
 ]

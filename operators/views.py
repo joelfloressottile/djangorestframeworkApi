@@ -23,6 +23,19 @@ class OperatorViewSet(viewsets.ModelViewSet):
             queryset = queryset.filter(side=side)
         return queryset
 
+    def create(self, request):
+        serializer = self.serializer_class(data=request.data)
+        print('/// STATE: ', serializer.is_valid())
+        print(serializer.errors)
+        if serializer.is_valid():
+            Operator.objects.create(**serializer.validated_data)
+
+            return Response(
+                serializer.validated_data, status=status.HTTP_201_CREATED
+            )
+
+        return Response('Bad request', status=status.HTTP_400_BAD_REQUEST)
+
 
 class WeaponViewSet(viewsets.ModelViewSet):
     queryset = Weapon.objects.all()
